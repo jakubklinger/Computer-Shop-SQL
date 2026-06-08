@@ -30,6 +30,8 @@ Microsoft Excel
 **GROUP BY** sc.country 
 **ORDER BY AVG**(si.quantity * si.price) **DESC**
 
+<img width="607" height="161" alt="Image" src="https://github.com/user-attachments/assets/3092c96a-2d75-49fb-992e-3ce5e61fea3e" />
+
 **Product Sales by Country, sorted by revenue**
 
 **SELECT** shop_customers.country,shop_items.product, 
