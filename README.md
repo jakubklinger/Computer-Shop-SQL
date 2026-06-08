@@ -32,7 +32,7 @@ Microsoft Excel
 
 <img width="607" height="161" alt="Image" src="https://github.com/user-attachments/assets/3092c96a-2d75-49fb-992e-3ce5e61fea3e" />
 
-**Product Sales by Country, sorted by revenue**
+**Product Sales by Country, sorted by country**
 
 **SELECT** sc.country, si.product, 
 **SUM**(si.quantity) **AS** total_quantity_sold,
@@ -50,7 +50,35 @@ Microsoft Excel
 
 **Most Popular Item In Each Country**
 
-
+**WITH** item_sales **AS** (
+   ** SELECT**
+        sc.country,
+        si.product,
+        **SUM**(si.quantity) **AS** total_quantity
+    **FROM** shop_customers sc
+    **JOIN** shop_orders so
+        **ON** sc.customer_id = so.customer_id
+    **JOIN** shop_items si
+        **ON** so.order_id = si.order_id
+    **GROUP BY** sc.country, si.product
+),
+ranked_items **AS** (
+    **SELECT**
+        country,
+        product,
+        total_quantity,
+        **ROW_NUMBER() OVER** (
+            **PARTITION BY** country
+            **ORDER BY** total_quantity DESC
+        ) **AS** rank_num
+    **FROM** item_sales
+)
+**SELECT**
+    country,
+    product,
+    total_quantity
+**FROM** ranked_items
+**WHERE** rank_num = 1;
 
 **---Contact me---**
 For any questions, please contact me at jakub.klinger1996@gmail.com.
