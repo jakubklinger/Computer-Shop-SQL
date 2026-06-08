@@ -46,5 +46,7 @@ Microsoft Excel
 **GROUP BY** sc.country, si.product
 **ORDER BY** sc.country  **DESC**;
 
+<img width="930" height="407" alt="Image" src="https://github.com/user-attachments/assets/f143eed8-bdae-4b6f-a94c-01b9d73aff99" />
+
 **---Contact me---**
 For any questions, please contact me at jakub.klinger1996@gmail.com.
