@@ -22,13 +22,37 @@ Microsoft Excel
 
 **Average Order Amount by Country, rounded to two decimals**
 
-**SELECT** sc.country, **COUNT**(sc.customer_id) **AS** customer_count, 
-**TO_CHAR**(**AVG**(si.quantity * si.price), '**FM999999999.00**') **AS** avg_order_amount 
-**FROM** shop_customers sc 
-**JOIN** shop_orders so **ON** sc.customer_id = so.customer_id 
-**JOIN** shop_items si **ON** so.order_id = si.order_id
-**GROUP BY** sc.country 
-**ORDER BY AVG**(si.quantity * si.price) **DESC**
+**Business Question**
+Which countries generate the highest average order value, and how does customer spending behavior differ across regions?
+
+Understanding this helps identify high-value markets and supports decisions related to marketing strategy, pricing, and logistics prioritization.
+
+**Approach**
+
+To calculate the true average order value per country, it was necessary to first compute the total value of each individual order. This is because a single order can contain multiple products, and aggregating at the product line level would distort the results.
+
+The analysis was performed in two steps:
+
+1. Calculate total revenue per order by summing all line items within each order
+2. Aggregate these order totals by country to compute the average order value
+
+**WITH** order_totals **AS** (
+    **SELECT**
+        so.order_id,
+        sc.country,
+        **SUM**(si.quantity * si.price) **AS** order_amount
+    **FROM **shop_customers sc
+   ** JOIN** shop_orders so ON sc.customer_id = so.customer_id
+    **JOIN** shop_items si ON so.order_id = si.order_id
+    **GROUP BY** so.order_id, sc.country
+)
+**SELECT**
+    country,
+   ** COUNT**(order_id) **AS** total_orders,
+   ** ROUND**(**AVG**(order_amount), 2) **AS** avg_order_amount
+**FROM** order_totals
+**GROUP BY** country
+**ORDER BY** avg_order_amount DESC;
 
 <img width="607" height="161" alt="Image" src="https://github.com/user-attachments/assets/3092c96a-2d75-49fb-992e-3ce5e61fea3e" />
 
