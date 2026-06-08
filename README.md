@@ -80,5 +80,7 @@ ranked_items **AS** (
 **FROM** ranked_items
 **WHERE** rank_num = 1;
 
+<img width="520" height="157" alt="Image" src="https://github.com/user-attachments/assets/94fd7a85-2c27-4356-a3d8-08a98d9c7653" />
+
 **---Contact me---**
 For any questions, please contact me at jakub.klinger1996@gmail.com.
