@@ -28,8 +28,10 @@ Average Order Amount by Country
 **FROM** shop_customers sc
 **JOIN** shop_orders so
 **ON** so.customer_id = sc.customer_id
-**GROUP BY** sc.country **HAVING AVG**(shop_orders.amount) **>**1000
+**GROUP BY** sc.country 
 **ORDER BY AVG** avg_order_amount **DESC**
+
+
 
 **---Contact me---**
 For any questions, please contact me at jakub.klinger1996@gmail.com.
