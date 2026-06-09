@@ -9,10 +9,11 @@ A collection of SQL scripts for analyzing sales data. My goal was to present som
 
 ## 🗄️ Tables
 
-| Table            | Description                                                              |
-| `shop_customers` |Stores customer information, including customer IDs and countries.        |
-| `shop_orders`    |Contains order records and links customers to purchases.                  |
-| `shop_items`     |Stores product-level transaction details, including quantities and prices.|
+| Table | Description |
+|---------|-------------|
+| `shop_customers` | Stores customer information, including customer IDs and countries. |
+| `shop_orders` | Contains order records and links customers to purchases. |
+| `shop_items` | Stores product-level transaction details, including quantities and prices. |
 
 ## 🛠️ Stack
 PostgreSQL 18.3
