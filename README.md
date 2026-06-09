@@ -37,6 +37,7 @@ The analysis was performed in two steps:
 1. Calculate total revenue per order by summing all line items within each order
 2. Aggregate these order totals by country to compute the average order value
 
+```sql
 **WITH** order_totals **AS** (
     **SELECT**
         so.order_id,
@@ -54,6 +55,7 @@ The analysis was performed in two steps:
 **FROM** order_totals
 **GROUP BY** country
 **ORDER BY** avg_order_amount DESC;
+```
 
 <img width="607" height="161" alt="Image" src="https://github.com/user-attachments/assets/3092c96a-2d75-49fb-992e-3ce5e61fea3e" />
 
