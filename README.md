@@ -92,6 +92,7 @@ Key insights were derived across three core areas: revenue distribution, product
 
 Significant differences in average order value suggest varying purchasing behaviors across markets. Countries with higher average order values may represent opportunities for premium product offerings and targeted customer retention strategies.
 
+
 📊**Product Sales by Country**  
 
 🎯**Business Question**
@@ -147,6 +148,7 @@ Helps optimize inventory distribution, pricing strategy, and localized marketing
 💡**Key Insight**
 
 Sales and revenue distributions indicate that product success varies by region. These findings can help inform localized inventory decisions and support more effective market-specific sales strategies.
+
 
 📊**Most Popular Item In Each Country**
 
