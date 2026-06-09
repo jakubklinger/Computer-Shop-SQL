@@ -78,6 +78,8 @@ The analysis was performed in two steps:
 Total quantity sold
 Total revenue generated
 Total number of orders containing the product
+
+```sql
 **SELECT** sc.country, si.product, 
 **SUM**(si.quantity) **AS** total_quantity_sold,
 **SUM** (si.quantity*si.price) **AS** total_revenue,
@@ -89,6 +91,7 @@ Total number of orders containing the product
 **ON** so.order_id =si.order_id
 **GROUP BY** sc.country, si.product
 **ORDER BY** sc.country  **DESC**;
+```
 
 <img width="930" height="407" alt="Image" src="https://github.com/user-attachments/assets/f143eed8-bdae-4b6f-a94c-01b9d73aff99" />
 
@@ -108,6 +111,7 @@ The analysis was performed in two steps:
 1. Aggregate total quantities sold for each product within each country.
 2. Use a window function (ROW_NUMBER()) to rank products by sales volume and select the highest-ranking product for each country.
 
+```sql
 **WITH** item_sales **AS** (
    ** SELECT**
         sc.country,
@@ -137,9 +141,9 @@ ranked_items **AS** (
     total_quantity
 **FROM** ranked_items
 **WHERE** rank_num = 1;
+```
 
 <img width="520" height="157" alt="Image" src="https://github.com/user-attachments/assets/94fd7a85-2c27-4356-a3d8-08a98d9c7653" />
-
 
 **---Contact me---**
 For any questions, please contact me at jakub.klinger1996@gmail.com.
