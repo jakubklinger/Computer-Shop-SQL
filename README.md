@@ -106,11 +106,15 @@ To evaluate product performance across different markets, sales data was aggrega
 
 The analysis was performed in two steps:
 
-1.Join customer, order, and item data to associate each product sale with a country.
-2. Aggregate sales metrics by country and product to calculate:
-Total quantity sold
-Total revenue generated
-Total number of orders containing the product
+
+<ol>
+<li>Join customer, order, and item data to associate each product sale with a country.</li> 
+<li>Aggregate sales metrics by country and product to calculate:</li></ol>
+<ul>
+    <li>Total quantity sold</li>
+    <li>Total revenue generated</li>
+    <li>Total number of orders containing the product</li>
+</ul>
 
 💻 **SQL Query**
 
@@ -156,9 +160,9 @@ Identifying the top-selling product in each market helps businesses understand c
 To determine the most popular product in each country, total sales quantities were calculated for every product-country combination. Products were then ranked within each country based on quantity sold.
 
 The analysis was performed in two steps:
-
-1. Aggregate total quantities sold for each product within each country.
-2. Use a window function (ROW_NUMBER()) to rank products by sales volume and select the highest-ranking product for each country.
+<ol>
+<li>Aggregate total quantities sold for each product within each country.</li> 
+<li>Use a window function (ROW_NUMBER()) to rank products by sales volume and select the highest-ranking product for each country.</li></ol>
 
 💻 **SQL Query**
 
