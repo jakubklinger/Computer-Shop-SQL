@@ -41,7 +41,7 @@ The analysis was performed in two steps:
     **SELECT**
         so.order_id,
         sc.country,
-        **SUM**(si.quantity * si.price) **AS** order_amount
+        **SUM**(si.quantity*si.price) **AS** order_amount
     **FROM **shop_customers sc
    ** JOIN** shop_orders so ON sc.customer_id = so.customer_id
     **JOIN** shop_items si ON so.order_id = si.order_id
@@ -78,8 +78,8 @@ Total revenue generated
 Total number of orders containing the product
 **SELECT** sc.country, si.product, 
 **SUM**(si.quantity) **AS** total_quantity_sold,
-**SUM** (si.quantity *si.price) **AS** total_revenue,
-**COUNT** (**DISTINCT** so.order_id) **AS** total_orders
+**SUM** (si.quantity*si.price) **AS** total_revenue,
+**COUNT** (**DISTINCT**so.order_id) **AS** total_orders
 **FROM** shop_customers sc
  **JOIN** shop_orders so
 **ON** sc.customer_id = so.customer_id
@@ -137,6 +137,7 @@ ranked_items **AS** (
 **WHERE** rank_num = 1;
 
 <img width="520" height="157" alt="Image" src="https://github.com/user-attachments/assets/94fd7a85-2c27-4356-a3d8-08a98d9c7653" />
+
 
 **---Contact me---**
 For any questions, please contact me at jakub.klinger1996@gmail.com.
