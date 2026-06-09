@@ -59,7 +59,6 @@ The analysis was performed in two steps:
 **📊 Product Sales by Country (sorted by country)**
 
 **Business Question**
-
 Which products generate the highest sales volume and revenue in each country?
 
 Understanding regional product performance helps identify market preferences, optimize inventory allocation, and support country-specific marketing and sales strategies.
@@ -92,9 +91,7 @@ Total number of orders containing the product
 **📊 Most Popular Item In Each Country**
 
 **Business Question**
-
 What is the most popular product in each country based on total quantity sold?
-
 Identifying the top-selling product in each market helps businesses understand customer preferences and tailor inventory, promotions, and product recommendations to local demand.
 
 **Approach**
