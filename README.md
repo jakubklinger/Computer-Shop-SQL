@@ -38,23 +38,23 @@ The analysis was performed in two steps:
 2. Aggregate these order totals by country to compute the average order value
 
 ```sql
-**WITH** order_totals **AS** (
-    **SELECT**
+WITH order_totals AS (
+    SELECT
         so.order_id,
         sc.country,
-        **SUM**(si.quantity*si.price) **AS** order_amount
-    **FROM **shop_customers sc
-   ** JOIN** shop_orders so ON sc.customer_id = so.customer_id
-    **JOIN** shop_items si ON so.order_id = si.order_id
-    **GROUP BY** so.order_id, sc.country
+        SUM(si.quantity*si.price)AS order_amount
+    FROM shop_customers sc
+    JOIN shop_orders so ON sc.customer_id = so.customer_id
+    JOIN shop_items si ON so.order_id = si.order_id
+    GROUP BY so.order_id, sc.country
 )
-**SELECT**
+SELECT
     country,
-   ** COUNT**(order_id) **AS** total_orders,
-   ** ROUND**(**AVG**(order_amount), 2) **AS** avg_order_amount
-**FROM** order_totals
-**GROUP BY** country
-**ORDER BY** avg_order_amount DESC;
+    COUNT(order_id) AS total_orders,
+    ROUND(**AVG**(order_amount), 2) AS avg_order_amount
+FROM order_totals
+GROUP BY country
+ORDER BY avg_order_amount DESC;
 ```
 
 <img width="607" height="161" alt="Image" src="https://github.com/user-attachments/assets/3092c96a-2d75-49fb-992e-3ce5e61fea3e" />
@@ -80,17 +80,17 @@ Total revenue generated
 Total number of orders containing the product
 
 ```sql
-**SELECT** sc.country, si.product, 
-**SUM**(si.quantity) **AS** total_quantity_sold,
-**SUM** (si.quantity*si.price) **AS** total_revenue,
-**COUNT** (**DISTINCT**so.order_id) **AS** total_orders
-**FROM** shop_customers sc
- **JOIN** shop_orders so
-**ON** sc.customer_id = so.customer_id
- **JOIN** shop_items si
-**ON** so.order_id =si.order_id
-**GROUP BY** sc.country, si.product
-**ORDER BY** sc.country  **DESC**;
+SELECT sc.country, si.product, 
+SUM(si.quantity) AS total_quantity_sold,
+SUM (si.quantity*si.price) AS total_revenue,
+COUNT (DISTINCT so.order_id) AS total_orders
+FROM shop_customers sc
+JOIN shop_orders so
+ON sc.customer_id = so.customer_id
+JOIN shop_items si
+ON so.order_id =si.order_id
+GROUP BY sc.country, si.product
+ORDER BY sc.country  DESC;
 ```
 
 <img width="930" height="407" alt="Image" src="https://github.com/user-attachments/assets/f143eed8-bdae-4b6f-a94c-01b9d73aff99" />
@@ -112,35 +112,35 @@ The analysis was performed in two steps:
 2. Use a window function (ROW_NUMBER()) to rank products by sales volume and select the highest-ranking product for each country.
 
 ```sql
-**WITH** item_sales **AS** (
-   ** SELECT**
+WITH item_sales AS (
+    SELECT
         sc.country,
         si.product,
-        **SUM**(si.quantity) **AS** total_quantity
-    **FROM** shop_customers sc
-    **JOIN** shop_orders so
-        **ON** sc.customer_id = so.customer_id
-    **JOIN** shop_items si
-        **ON** so.order_id = si.order_id
-    **GROUP BY** sc.country, si.product
+        SUM(si.quantity) AS total_quantity
+    FROM shop_customers sc
+    JOIN shop_orders so
+        ON sc.customer_id = so.customer_id
+    JOIN shop_items si
+        ON so.order_id = si.order_id
+    GROUP BY sc.country, si.product
 ),
-ranked_items **AS** (
-    **SELECT**
+ranked_items AS (
+    SELECT
         country,
         product,
         total_quantity,
-        **ROW_NUMBER() OVER** (
-            **PARTITION BY** country
-            **ORDER BY** total_quantity DESC
-        ) **AS** rank_num
-    **FROM** item_sales
+        ROW_NUMBER() OVER (
+            PARTITION BY country
+            ORDER BY total_quantity DESC
+        ) AS rank_num
+    FROM item_sales
 )
-**SELECT**
+SELECT
     country,
     product,
     total_quantity
-**FROM** ranked_items
-**WHERE** rank_num = 1;
+FROM ranked_items
+WHERE rank_num = 1;
 ```
 
 <img width="520" height="157" alt="Image" src="https://github.com/user-attachments/assets/94fd7a85-2c27-4356-a3d8-08a98d9c7653" />
