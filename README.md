@@ -81,7 +81,8 @@ ORDER BY avg_order_amount DESC;
 
 📈 **Overview of Findings**
 
-The analysis revealed clear regional and product-level differences in customer behavior and sales performance. Key insights were derived across three core areas: revenue distribution, product demand, and customer purchasing patterns.
+The analysis revealed clear regional and product-level differences in customer behavior and sales performance. 
+Key insights were derived across three core areas: revenue distribution, product demand, and customer purchasing patterns.
 
 💡**Key Insight**
 
@@ -126,9 +127,9 @@ ORDER BY sc.country  DESC;
 <img width="930" height="407" alt="Image" src="https://github.com/user-attachments/assets/f143eed8-bdae-4b6f-a94c-01b9d73aff99" />
 
 📈 **Overview of Findings**
-Product performance varies significantly across different countries
-Some products generate high revenue but moderate volume, while others show high volume but lower revenue
-Clear evidence of regional product preferences
+Product performance varies significantly across different countries.
+Some products generate high revenue but moderate volume, while others show high volume but lower revenue.
+Clear evidence of regional product preferences.
 
 📌 **Business Impact**:
 Helps optimize inventory distribution, pricing strategy, and localized marketing campaigns.
@@ -190,9 +191,9 @@ WHERE rank_num = 1;
 <img width="520" height="157" alt="Image" src="https://github.com/user-attachments/assets/94fd7a85-2c27-4356-a3d8-08a98d9c7653" />
 
 📈 **Overview of Findings**
-Each country has distinct top-selling products based on total quantity sold
-No single product dominates across all markets, highlighting localized demand patterns
-Window functions enabled ranking of products within each country
+Each country has distinct top-selling products based on total quantity sold.
+No single product dominates across all markets, highlighting localized demand patterns.
+Window functions enabled ranking of products within each country.
 
 📌 **Business Impact:**
 Supports country-specific product recommendations, stock planning, and promotional targeting.
