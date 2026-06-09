@@ -111,14 +111,14 @@ Total number of orders containing the product
 
 ```sql
 SELECT sc.country, si.product, 
-SUM(si.quantity) AS total_quantity_sold,
-SUM (si.quantity*si.price) AS total_revenue,
-COUNT (DISTINCT so.order_id) AS total_orders
+       SUM(si.quantity) AS total_quantity_sold,
+       SUM (si.quantity*si.price) AS total_revenue,
+       COUNT(DISTINCT so.order_id) AS total_orders
 FROM shop_customers sc
-JOIN shop_orders so
-ON sc.customer_id = so.customer_id
-JOIN shop_items si
-ON so.order_id =si.order_id
+     JOIN shop_orders so
+     ON sc.customer_id = so.customer_id
+     JOIN shop_items si
+     ON so.order_id =si.order_id
 GROUP BY sc.country, si.product
 ORDER BY sc.country  DESC;
 ```
