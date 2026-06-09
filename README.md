@@ -71,7 +71,7 @@ WITH order_totals AS (
 SELECT
     country,
     COUNT(order_id) AS total_orders,
-    ROUND(**AVG**(order_amount), 2) AS avg_order_amount
+    ROUND(AVG(order_amount), 2) AS avg_order_amount
 FROM order_totals
 GROUP BY country
 ORDER BY avg_order_amount DESC;
