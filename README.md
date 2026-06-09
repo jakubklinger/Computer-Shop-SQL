@@ -1,7 +1,19 @@
- # SQL Computer-Shop-SQL Sales Analysis Project
+🛒 **Computer Shop SQL Sales Analysis**
+📌 Project Overview
 
-## 📝 Description
-A collection of SQL scripts for analyzing sales data. My goal was to present some realistic data analytics problems solved with the use of simple and intermediate level functions (including aggregations, multiple JOINs, CTE, window functions, RANK, SUM OVER).
+This project demonstrates a SQL-based sales analysis of a fictional computer shop database. The goal is to explore customer behavior, product performance, and regional sales patterns using structured queries and analytical techniques.
+
+The analysis focuses on transforming raw transactional data into meaningful business insights that can support decision-making in areas such as marketing strategy, inventory management, and regional performance optimization.
+
+🎯 **Objectives**
+Analyze customer purchasing behavior across different countries
+Identify top-performing products and revenue drivers
+Evaluate average order value by region
+Apply intermediate SQL techniques including:
+Aggregations
+Multi-table JOINs
+Common Table Expressions (CTEs)
+Window functions (ROW_NUMBER, ranking logic)
 
 ## 📋 Files
 - database.sql
@@ -66,6 +78,10 @@ ORDER BY avg_order_amount DESC;
 📈**Results**
 <img width="607" height="161" alt="Image" src="https://github.com/user-attachments/assets/3092c96a-2d75-49fb-992e-3ce5e61fea3e" />
 
+📈 **Overview of Findings**
+
+The analysis revealed clear regional and product-level differences in customer behavior and sales performance. Key insights were derived across three core areas: revenue distribution, product demand, and customer purchasing patterns.
+
 💡**Key Insight**
 
 Significant differences in average order value suggest varying purchasing behaviors across markets. Countries with higher average order values may represent opportunities for premium product offerings and targeted customer retention strategies.
@@ -107,6 +123,14 @@ ORDER BY sc.country  DESC;
 ```
 
 <img width="930" height="407" alt="Image" src="https://github.com/user-attachments/assets/f143eed8-bdae-4b6f-a94c-01b9d73aff99" />
+
+📈 **Overview of Findings**
+Product performance varies significantly across different countries
+Some products generate high revenue but moderate volume, while others show high volume but lower revenue
+Clear evidence of regional product preferences
+
+📌 **Business Impact**:
+Helps optimize inventory distribution, pricing strategy, and localized marketing campaigns.
 
 💡**Key Insight**
 
@@ -164,10 +188,19 @@ WHERE rank_num = 1;
 
 <img width="520" height="157" alt="Image" src="https://github.com/user-attachments/assets/94fd7a85-2c27-4356-a3d8-08a98d9c7653" />
 
+📈 **Overview of Findings**
+Each country has distinct top-selling products based on total quantity sold
+No single product dominates across all markets, highlighting localized demand patterns
+Window functions enabled ranking of products within each country
+
+📌 **Business Impact:**
+Supports country-specific product recommendations, stock planning, and promotional targeting.
+
 
 💡 **Key Insight**
 
 Regional differences in top-selling products demonstrate the importance of understanding local customer preferences. Businesses can leverage these insights to optimize product assortments and improve the effectiveness of country-specific marketing initiatives.
+
 
 ✉ **---Contact me---**
 For any questions, please contact me at jakub.klinger1996@gmail.com.
