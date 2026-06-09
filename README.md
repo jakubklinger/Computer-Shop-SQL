@@ -7,14 +7,16 @@ This project demonstrates a SQL-based sales analysis of a fictional computer sho
 The analysis focuses on transforming raw transactional data into meaningful business insights that can support decision-making in areas such as marketing strategy, inventory management, and regional performance optimization.
 
 🎯 **Objectives**
-Analyze customer purchasing behavior across different countries
-Identify top-performing products and revenue drivers
-Evaluate average order value by region
-Apply intermediate SQL techniques including:
-Aggregations
-Multi-table JOINs
-Common Table Expressions (CTEs)
-Window functions (ROW_NUMBER, ranking logic)
+<ul>
+<li>Analyze customer purchasing behavior across different countries</li>
+<li>Identify top-performing products and revenue drivers</li>
+<li>Evaluate average order value by region</li>
+<li>Apply intermediate SQL techniques including:
+    <li>Aggregations</li>
+    <li>Multi-table JOINs</li>
+    <li>Common Table Expressions (CTEs)</li>
+    <li>Window functions (ROW_NUMBER, ranking logic)</li>
+</ul>
 
 ## 📋 Files
 - database.sql
