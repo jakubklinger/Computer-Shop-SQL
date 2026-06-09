@@ -80,6 +80,7 @@ GROUP BY country
 ORDER BY avg_order_amount DESC;
 ```
 📈**Results**
+
 <img width="607" height="161" alt="Image" src="https://github.com/user-attachments/assets/3092c96a-2d75-49fb-992e-3ce5e61fea3e" />
 
 📈 **Overview of Findings**
@@ -126,6 +127,8 @@ FROM shop_customers sc
 GROUP BY sc.country, si.product
 ORDER BY sc.country  DESC;
 ```
+
+📈**Results**
 
 <img width="930" height="407" alt="Image" src="https://github.com/user-attachments/assets/f143eed8-bdae-4b6f-a94c-01b9d73aff99" />
 
@@ -190,6 +193,8 @@ SELECT
 FROM ranked_items
 WHERE rank_num = 1;
 ```
+
+📈**Results**
 
 <img width="520" height="157" alt="Image" src="https://github.com/user-attachments/assets/94fd7a85-2c27-4356-a3d8-08a98d9c7653" />
 
