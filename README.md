@@ -16,11 +16,13 @@ A collection of SQL scripts for analyzing sales data. My goal was to present som
 | `shop_items` | Stores product-level transaction details, including quantities and prices. |
 
 ## 🛠️ Stack
-PostgreSQL 18.3
-pgAdmin 4
-DBeaver 26.1.0
-Microsoft Excel 
-
+<ol>
+<li>PostgreSQL 18.3</li>
+<li>pgAdmin 4</li>
+<li>DBeaver 26.1.0</li>
+<li>Microsoft Excel</li>
+</ol>
+ 
 ## </> Example Queries
 
 📊**Average Order Amount by Country**
