@@ -23,6 +23,7 @@ Microsoft Excel
 📊Average Order Amount by Country (rounded to two decimals)
 
 **Business Question**
+
 Which countries generate the highest average order value, and how does customer spending behavior differ across regions?
 
 Understanding this helps identify high-value markets and supports decisions related to marketing strategy, pricing, and logistics prioritization.
@@ -59,6 +60,7 @@ The analysis was performed in two steps:
 **📊 Product Sales by Country (sorted by country)**
 
 **Business Question**
+
 Which products generate the highest sales volume and revenue in each country?
 
 Understanding regional product performance helps identify market preferences, optimize inventory allocation, and support country-specific marketing and sales strategies.
@@ -91,6 +93,7 @@ Total number of orders containing the product
 **📊 Most Popular Item In Each Country**
 
 **Business Question**
+
 What is the most popular product in each country based on total quantity sold?
 Identifying the top-selling product in each market helps businesses understand customer preferences and tailor inventory, promotions, and product recommendations to local demand.
 
