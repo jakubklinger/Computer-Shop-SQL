@@ -54,9 +54,9 @@ To calculate the true average order value per country, it was necessary to first
 
 The analysis was performed in two steps:
 
-<il>
+<ol>
 <li>Calculate total revenue per order by summing all line items within each order</li> 
-<li>Aggregate these order totals by country to compute the average order value</li></il>
+<li>Aggregate these order totals by country to compute the average order value</li></ol>
 
 💻 **SQL Query**
 
