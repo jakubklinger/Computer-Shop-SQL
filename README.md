@@ -1,4 +1,5 @@
 🛒 **Computer Shop SQL Sales Analysis**
+
 📌 Project Overview
 
 This project demonstrates a SQL-based sales analysis of a fictional computer shop database. The goal is to explore customer behavior, product performance, and regional sales patterns using structured queries and analytical techniques.
