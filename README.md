@@ -31,12 +31,12 @@ The analysis focuses on transforming raw transactional data into meaningful busi
 | `shop_items` | Stores product-level transaction details, including quantities and prices. |
 
 ## 🛠️ Stack
-<ol>
+<ul>
 <li>PostgreSQL 18.3</li>
 <li>pgAdmin 4</li>
 <li>DBeaver 26.1.0</li>
 <li>Microsoft Excel</li>
-</ol>
+</ul>
  
 ## </> Example Queries
 
