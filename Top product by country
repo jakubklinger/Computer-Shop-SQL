@@ -1,1 +1,31 @@
+WITH item_sales AS (
+    SELECT
+        sc.country,
+        si.product,
+        SUM(si.quantity) AS total_quantity
+    FROM shop_customers sc
+    JOIN shop_orders so
+        ON sc.customer_id = so.customer_id
+    JOIN shop_items si
+        ON so.order_id = si.order_id
+    GROUP BY sc.country, si.product
+),
+ranked_items AS (
+    SELECT
+        country,
+        product,
+        total_quantity,
+        ROW_NUMBER() OVER (
+            PARTITION BY country
+            ORDER BY total_quantity DESC
+        ) AS rank_num
+    FROM item_sales
+)
+SELECT
+    country,
+    product,
+    total_quantity
+FROM ranked_items
+WHERE rank_num = 1;
+
 
